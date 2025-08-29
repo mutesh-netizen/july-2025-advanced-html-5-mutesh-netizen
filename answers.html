@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Form with Structured Content</title>
+  <meta name="description" content="An example HTML5 page with structured content, media, and a comprehensive form using semantic tags and validation." />
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Enhanced Form Page</h1>
+    <p>This page demonstrates a well-structured layout with lists, tables, media, and a fully-featured HTML5 form.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="features-heading">
+      <h2 id="features-heading">Features of Our Service</h2>
+
+      <!-- Unordered list -->
+      <ul>
+        <li>Fast and reliable service</li>
+        <li>24/7 customer support</li>
+        <li>User-friendly interface</li>
+      </ul>
+
+      <!-- Ordered list -->
+      <ol>
+        <li>Sign up</li>
+        <li>Choose your plan</li>
+        <li>Enjoy our services</li>
+      </ol>
+
+      <!-- Table of Plans -->
+      <table border="1" summary="Comparison of subscription plans">
+        <caption>Subscription Plans</caption>
+        <thead>
+          <tr>
+            <th scope="col">Plan</th>
+            <th scope="col">Price</th>
+            <th scope="col">Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>$9.99/month</td>
+            <td>Email support, 10GB storage</td>
+          </tr>
+          <tr>
+            <td>Premium</td>
+            <td>$19.99/month</td>
+            <td>Priority support, 100GB storage, Analytics</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>Contact us</td>
+            <td>Custom solutions, Dedicated manager</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="media-heading">
+      <h2 id="media-heading">Our Team</h2>
+      <!-- Accessible image with alt -->
+      <figure>
+        <img src="team-photo.jpg" alt="Photo of our team members smiling" width="600" />
+        <figcaption>Our friendly team ready to assist you.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading">Sign Up Form</h2>
+
+      <form action="/submit" method="post" novalidate>
+        <!-- Name -->
+        <label for="fullname">Full Name:</label>
+        <input 
+          type="text" 
+          id="fullname" 
+          name="fullname" 
+          placeholder="John Doe" 
+          required 
+          autocomplete="name" 
+        />
+        <br /><br />
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="john@example.com" 
+          required 
+          autocomplete="email" 
+        />
+        <br /><br />
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder="Create a password" 
+          required 
+          minlength="8" 
+          autocomplete="new-password" 
+        />
+        <br /><br />
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input 
+          type="date" 
+          id="dob" 
+          name="dob" 
+          required 
+          max="2005-12-31" 
+          aria-describedby="dob-help"
+        />
+        <small id="dob-help">You must be at least 18 years old.</small>
+        <br /><br />
+
+        <!-- Gender (radio buttons) -->
+        <fieldset>
+          <legend>Gender</legend>
+          <input type="radio" id="gender-male" name="gender" value="male" required />
+          <label for="gender-male">Male</label>
+
+          <input type="radio" id="gender-female" name="gender" value="female" />
+          <label for="gender-female">Female</label>
+
+          <input type="radio" id="gender-other" name="gender" value="other" />
+          <label for="gender-other">Other</label>
+        </fieldset>
+        <br />
+
+        <!-- Favorite color (color input) -->
+        <label for="favcolor">Favorite Color:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#0000ff" />
+        <br /><br />
+
+        <!-- Phone number -->
+        <label for="phone">Phone Number:</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          placeholder="+1-555-555-5555" 
+          pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$" 
+          autocomplete="tel" 
+          required 
+          aria-describedby="phone-help"
+        />
+        <small id="phone-help">Format: +1-555-555-5555</small>
+        <br /><br />
+
+        <!-- Website URL -->
+        <label for="website">Website:</label>
+        <input 
+          type="url" 
+          id="website" 
+          name="website" 
+          placeholder="https://example.com" 
+          autocomplete="url"
+        />
+        <br /><br />
+
+        <!-- Number input -->
+        <label for="quantity">Number of licenses:</label>
+        <input 
+          type="number" 
+          id="quantity" 
+          name="quantity" 
+          min="1" 
+          max="100" 
+          value="1" 
+          required 
+        />
+        <br /><br />
+
+        <!-- Readonly field -->
+        <label for="refcode">Referral Code (readonly):</label>
+        <input 
+          type="text" 
+          id="refcode" 
+          name="refcode" 
+          value="ABC123XYZ" 
+          readonly 
+        />
+        <br /><br />
+
+        <!-- Select drop-down -->
+        <label for="plan">Choose your plan:</label>
+        <select id="plan" name="plan" required>
+          <option value="" disabled selected>Select a plan</option>
+          <option value="basic">Basic</option>
+          <option value="premium">Premium</option>
+          <option value="enterprise">Enterprise</option>
+        </select>
+        <br /><br />
+
+        <!-- Textarea -->
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter any special requests or notes here..."></textarea>
+        <br /><br />
+
+        <!-- Checkbox -->
+        <input type="checkbox" id="terms" name="terms" required />
+        <label for="terms">I agree to the <a href="/terms">terms and conditions</a>.</label>
+        <br /><br />
+
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
